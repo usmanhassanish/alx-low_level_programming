@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+#include <ctype.h>
 /*more headers goes there*/
 /*betty style do for function main goes there */
 /**
@@ -15,7 +16,9 @@ int main(void)
 
 	for (x = 'A'; x <= 'Z'; x++)
 	{
-	char small = tolower(x);
+	char small;
+	small = tolower(x);
+
 		putchar(small);
 	}
 	printf("\n");
