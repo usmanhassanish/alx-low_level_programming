@@ -20,7 +20,7 @@ int main(void)
 	}
 	for (j = 'a'; j < 'g'; j++)
 	{
-		putchar (j + '0');
+		putchar (j);
 	}
 	putchar ('\n');
 	return (0);
