@@ -13,12 +13,11 @@
 int main(void)
 {
 	int x;
+	char small;
 
 	for (x = 'A'; x <= 'Z'; x++)
 	{
-	char small;
 	small = tolower(x);
-
 		putchar(small);
 	}
 	printf("\n");
