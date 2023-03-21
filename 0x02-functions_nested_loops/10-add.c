@@ -1,16 +1,18 @@
 #include "main.h"
 
 /**
- * main - Entry point
+ * add - Entry point
  *
  * Description: 'the program's description'
- *
- * Return: Always 0 (Success)
+ * @x: number1
+ * @y: number2
+ * Return: sum is returned
  */
 int add(int x, int y)
 {
 	int sum;
+
 	sum = x + y;
-	return sum;
+	return (sum);
 }
 
