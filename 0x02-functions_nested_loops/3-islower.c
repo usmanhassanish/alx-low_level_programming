@@ -4,7 +4,8 @@
  * _islower - Entry point
  *
  * Description: 'the program's description'
- * @parameter: c is the argument taken by the function
+ * @c: c is the argument taken by the function
+ *
  * Return: 1 if c is lowercase but 0 otherwise
  */
 int _islower(int c)

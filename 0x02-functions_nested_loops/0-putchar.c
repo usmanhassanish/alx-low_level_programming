@@ -1,10 +1,9 @@
 #include "main.h"
-
 /**
  * main - Entry point
  *
  * Description: Prints _putchar
- * return: Always 0
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
