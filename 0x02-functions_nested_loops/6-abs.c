@@ -1,22 +1,21 @@
 #include "main.h"
 
 /**
- * main - Entry point
- *
- * Description: 'the program's description'
+ * _abs - Entry point
+ * @c: takes in an integer
  *
  * Return: Always 0 (Success)
  */
 int _abs(int c)
 {
-	if (c < 0) 
+	if (c < 0)
 	{
 		c = c * (-1);
-		return c;
+		return (c);
 	}
 	else
 	{
-		return c;
+		return (c);
 	}
-	
+
 }
