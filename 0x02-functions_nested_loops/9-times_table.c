@@ -1,29 +1,39 @@
 #include "main.h"
 
 /**
- * main - Entry point
+ * times_table - Entry point
  *
  * Description: 'the program's description'
  *
- * Return: Always 0 (Success)
  */
 void times_table(void)
 {
-	int i = 0;
+	int i;
+	int j;
+	int multi;
 
-	for (i = 0; i <= 9; i++)
+	for (i = 0; i < 10; i++)
 	{
-		int j;
-		for (j = 1; j <= 9; j++)
+		for (j = 0; j < 10; j++)
 		{
-			int k;
-			k = i * j;
-			_putchar((k/10)+'0');
-    			_putchar((k%10)+'0');
-		        	
-			
-		}
-		_putchar('\n');
-		
+			multi = i * j;
+			if (j == 0)
+				_putchar(multi + '0');
+			if (multi < 10 && j != 0)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(multi + '0');
+			}
+			else if (multi >= 10)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar((multi / 10) + '0');
+				_putchar((multi % 10) + '0');
+			}
+	}
+	_putchar('\n');
 	}
 }
