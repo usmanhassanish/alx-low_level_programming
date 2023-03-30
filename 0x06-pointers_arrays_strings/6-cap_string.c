@@ -6,7 +6,7 @@
  */
 char *cap_string(char *s)
 {
-	int i; 
+	int i;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -17,16 +17,15 @@ char *cap_string(char *s)
 			if (s[k] >= 'a' && s[k] <= 'z')
 			{
 				s[k] = s[k] - 32;
-			
 			}
 			else
 			{
-			
+
 			}
 		}
 		else
 		{
-		
+
 		}
 	}
 	return (s);
