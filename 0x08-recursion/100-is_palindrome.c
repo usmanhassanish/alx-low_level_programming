@@ -7,7 +7,7 @@ int strLength(char *str);
  * @s: string parameter
  * Return: return 1 or 0
  */
-int is_palindrome(char *s);
+int is_palindrome(char *s)
 {
 	int len = strLength(s);
 
