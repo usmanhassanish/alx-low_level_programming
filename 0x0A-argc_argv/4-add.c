@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
 			if (*argv[i] >= 'a' && *argv[i] <= 'z')
 			{
 				printf("%s\n",j);
+				return (1);
 				exit(0);
 			}
 			else
