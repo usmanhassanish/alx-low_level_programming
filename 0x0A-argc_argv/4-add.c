@@ -7,34 +7,29 @@
  * @argv: argument 2
  * Return: return 0 as success
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int i;
+	int i, j;
 	int sum = 0;
-	int k = 0;
-	char j[] = "Error";
 
-	if (argc <= 1)
+	if (argc < 2)
 	{
-		printf("%d\n", k);
+		printf("0\n");
 		return (0);
-		exit(0);
 	}
-	else
+	for (i = 1; i < argc; i++)
 	{
-		for (i = 0; i < argc; i++)
+		j = 0;
+		while (argv[i][j])
 		{
-			if (*argv[i] >= 'a' && *argv[i] <= 'z')
+			if (!isdigit(argv[i][j]))
 			{
-				printf("%s\n", j);
+				printf("Error\n");
 				return (1);
-				exit(0);
 			}
-			else
-			{
-				sum = sum + atoi(argv[i]);
-			}
+			j++;
 		}
+		sum += atoi(argv[i]);
 	}
 	printf("%d\n", sum);
 	return (0);
