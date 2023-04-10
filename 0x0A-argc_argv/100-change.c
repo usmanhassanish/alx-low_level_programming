@@ -8,20 +8,23 @@
  * @argv: argument 2
  * Return: return 1 or 0
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	int cents = atoi(argv[1]);
 	int coins = 0;
-	if (argc != 2)
+
+	if (argc > 2 || argc == 1)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	if (cents < 0)
+	else if (cents < 0)
 	{
-		printf("0\n");
+		printf("%d\n", 0);
 		return (0);
 	}
+	else
+	{
 	coins += cents / 25;
 	cents %= 25;
 	coins += cents / 10;
@@ -34,5 +37,6 @@ int main(int argc, char *argv[])
 
 	printf("%d\n", coins);
 	return (0);
+	}
 }
 
