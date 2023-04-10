@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 	int i;
 	int sum = 0;
 	int k = 0;
+	char j[] = "Error";
 
 	if (argc <= 1)
 	{
@@ -24,7 +25,7 @@ int main(int argc, char *argv[])
 		{
 			if (*argv[i] >= 'a' && *argv[i] <= 'z')
 			{
-				printf("Error\n");
+				printf("%s\n",j);
 				exit(0);
 			}
 			else
