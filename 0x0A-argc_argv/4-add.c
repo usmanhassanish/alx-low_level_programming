@@ -11,10 +11,12 @@ int main(int argc, char *argv[])
 {
 	int i;
 	int sum = 0;
+	int k = 0;
 
 	if (argc <= 1)
 	{
-		printf("0\n");
+		printf("%d\n", k);
+		exit(0);
 	}
 	else
 	{
