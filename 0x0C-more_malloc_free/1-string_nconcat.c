@@ -19,10 +19,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		k++;
 	}
 	ptr = malloc((sizeof(char) * k) + n);
-	if (ptr == NULL)
-	{
+	if (!ptr)
 		return (NULL);
-	}
 	for (i = 0; i < (k + n); i++)
 	{
 		if (i >= k)
