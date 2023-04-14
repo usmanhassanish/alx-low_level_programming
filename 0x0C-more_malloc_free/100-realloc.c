@@ -23,7 +23,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		free(ptr);
 		return (NULL);
 	}
-	ptr = malloc(new_size);
+	ptr = malloc(new_size + 1);
 	return (ptr);
 
 }
