@@ -3,40 +3,50 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * main - main method
+ * main - Entry point
  * @argc: argument 1
  * @argv: argument 2
- * Return: return 1 or 0
+ * Return: returns 0 always
  */
 int main(int argc, char **argv)
 {
-	int cents = atoi(argv[1]);
-	int coins = 0;
+	int number;
+	int count = 0;
 
-	if (argc > 2 || argc == 1)
+	if (argc != 2)/* A */
 	{
 		printf("Error\n");
 		return (1);
 	}
-	else if (cents < 0)
+	number = atoi(argv[1]);
+	while (number > 0)
 	{
-		printf("%d\n", 0);
-		return (0);
+		while (number >= 25)
+		{
+			number -= 25;
+			count++;
+		}
+		while (number >= 10)
+		{
+			number -= 10;
+			count++;
+		}
+		while (number >= 5)
+		{
+			number -= 5;
+			count++;
+		}
+		while (number >= 2)
+		{
+			number -= 2;
+			count++;
+		}
+		while (number >= 1)
+		{
+			number -= 1;
+			count++;
+		}
 	}
-	else
-	{
-	coins += cents / 25;
-	cents %= 25;
-	coins += cents / 10;
-	cents %= 10;
-	coins += cents / 5;
-	cents %= 5;
-	coins += cents / 2;
-	cents %= 2;
-	coins += cents;
-
-	printf("%d\n", coins);
+	printf("%d\n", count);
 	return (0);
-	}
 }
-
