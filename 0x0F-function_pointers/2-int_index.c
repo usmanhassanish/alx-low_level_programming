@@ -4,14 +4,13 @@
  * int_index - compare function
  * @array: array of intgers
  * @size: size of the array
- * @cmp: compare function 
+ * @cmp: compare function
+ * Return: -1 or integer
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i;
-	
-	if(!array || !size)
-		return (-1);
+
 	if (array && cmp)
 	{
 		for (i = 0; i < size; i++)
