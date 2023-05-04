@@ -4,7 +4,7 @@
  * get_bit - return the bit at a certain position
  * @n: number to be converted
  * @index: index to be returned
- * return the the indext or -1
+ * Return: returns -1 or value
  */
 int get_bit(unsigned long int n, unsigned int index)
 {

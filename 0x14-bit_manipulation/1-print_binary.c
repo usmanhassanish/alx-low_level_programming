@@ -1,5 +1,9 @@
 #include "main.h"
 #include <stdio.h>
+/**
+ * print_binary - prints binary
+ * @n: argument
+ */
 void print_binary(unsigned long int n)
 {
 	int i, counter = 0;
