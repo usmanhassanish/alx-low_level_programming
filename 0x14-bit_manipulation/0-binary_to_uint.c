@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include "main.h"
 /**
  * binary_to_uint - converts a binary to an unsigned int
@@ -6,20 +7,23 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int decimal = 0;
+	unsigned int sum, power;
+	int length;
 
 	if (b == NULL)
-	{
 		return (0);
+
+	for (length = 0; b[length]; length++)
+	{
+		if (b[length] != '0' && b[length] != '1')
+			return (0);
 	}
 
-	while (*b)
+	for (power = 1, sum = 0, length--; length >= 0; length--, power *= 2)
 	{
-		decimal <<= 1;
-		if (*b++ == '1')
-			decimal += 1;
+		if (b[length] == '1')
+			sum += power;
 	}
-		if (decimal == 9)
-			return (0);
-	return (decimal);
+
+	return (sum);
 }
