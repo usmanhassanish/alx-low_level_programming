@@ -1,14 +1,12 @@
 #include <aio.h>
-#include <fcntl.h>
 #include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
 #include <unistd.h>
 /**
- * read_textfile
- * @filename: argument 1
- * @letters: argument 2
- * Return: return file
+ * read_textfile - Reads a text file and prints it to POSIX stdout.
+ * @filename: A pointer to the name of the file.
+ * @letters: The number of letters t
+ * Return: If the
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
