@@ -1,7 +1,6 @@
 #include "main.h"
 /**
  * jack_bauer - Entry point
- *
  */
 void jack_bauer(void)
 {
