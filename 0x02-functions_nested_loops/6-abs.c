@@ -3,7 +3,6 @@
 /**
  * _abs - Entry point
  * @c: takes in an integer
- *
  * Return: Always 0 (Success)
  */
 int _abs(int c)
