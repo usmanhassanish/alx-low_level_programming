@@ -2,14 +2,13 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
-
 /**
  * read_textfile - reads a text file and prints it stdout
  *
  * @filename: name of the file to read
  * @letters: number of letters to read and print
  *
- * Return: number of letters read and printed, or 0 on failure
+ * Return: number of letters read and printed
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
