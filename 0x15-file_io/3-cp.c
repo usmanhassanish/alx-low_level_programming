@@ -1,25 +1,27 @@
 #include "main.h"
+#include <stdlib.h>
+#include <stddef.h>
 
 /**
- * file_from - open and read file
- * @arg1: argument 1
- * @ran: argument 2
+ * file_from - to open and read file
+ * @arg1: pointer to file
+ * @ran: pointer to temp buffer
  *
  * Return: pointer to buffer
  */
 
 char *file_from(char *arg1, char *ran)
 {
-	int aa, bc;
+	int ff, cf;
 	ssize_t r, tb = 0;
 
-	aa = open(arg1, O_RDONLY);
-	if (aa == -1)
+	ff = open(arg1, O_RDONLY);
+	if (ff == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", arg1);
 		exit(98);
 	}
-	while ((r = read(aa, ran + tb, 1024)) > 0)
+	while ((r = read(ff, ran + tb, 1024)) > 0)
 	{
 		tb = tb + r;
 	}
@@ -28,26 +30,26 @@ char *file_from(char *arg1, char *ran)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", arg1);
 		exit(98);
 	}
-	bc = close(aa);
-	if (bc == -1)
+	cf = close(ff);
+	if (cf == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", aa);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ff);
 		exit(100);
 	}
 	return (ran);
 }
 
 /**
- * main - copy contents
+ * main - copy content of a file to another file
  * @argc: number of arguments
- * @argv: arguments
+ * @argv: pointer to an array of the arguments
  *
  * Return: 1 if successful, -1 otherwise
  */
 
 int main(int argc, char **argv)
 {
-	int tt, uu, count;
+	int ft, ct, count;
 	ssize_t w;
 	char *reading;
 	char ran[4096];
@@ -58,8 +60,8 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 	reading = file_from(argv[1], ran);
-	tt = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (tt == -1)
+	ft = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	if (ft == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
@@ -67,16 +69,16 @@ int main(int argc, char **argv)
 	while (reading[count])
 		count++;
 
-	w = write(tt, reading, count);
+	w = write(ft, reading, count);
 	if (w == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	uu = close(tt);
-	if (uu == -1)
+	ct = close(ft);
+	if (ct == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", tt);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ft);
 		exit(100);
 	}
 	return (1);
