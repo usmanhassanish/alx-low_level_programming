@@ -1,4 +1,7 @@
 #include "main.h"
+#include <sys/types.h>
+#include <stddef.h>
+#include <stdlib.h>
 
 /**
  * file_from - open and read file
