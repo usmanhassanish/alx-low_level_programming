@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 /**
  * main - the main function
@@ -6,9 +5,8 @@
  * @argv: an array of the names of paramaetrs
  * Return: returns zero
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	(void)*argv;
-	printf("%d\n", argc - 1);
+	printf("%d\n", argc);
 	return (0);
 }
