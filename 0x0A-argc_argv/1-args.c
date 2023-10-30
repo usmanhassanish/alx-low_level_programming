@@ -5,7 +5,7 @@
  * @argv: an array of the names of paramaetrs
  * Return: returns zero
  */
-int main(int argc, char **argv)
+int main(int argc, __attribute__((unused)) char **argv)
 {
 	printf("%d\n", argc);
 	return (0);
