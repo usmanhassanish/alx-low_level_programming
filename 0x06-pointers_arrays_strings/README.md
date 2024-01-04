@@ -1,2 +1,1 @@
-POINTERS AND ARRAYS
-continuation of pointers and arrays learning
+POINTERS AND ARRAYS CONTINUATION
