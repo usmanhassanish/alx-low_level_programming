@@ -27,14 +27,7 @@ void print_all(const char * const format, ...)
             (i == (argumentCount - 1)) ? printf("%f\n", va_arg(ap, double)) : printf("%f, ", va_arg(ap, double));
             break;
         case 's':
-            if (format[i] == NULL)
-            {
-                (i == (argumentCount - 1)) ? printf("(nil)\n") : printf("(nil), ");
-            }
-            else
-            {
-                (i == (argumentCount - 1)) ? printf("%s\n", va_arg(ap, char *)) : printf("%s, ", va_arg(ap, char *));
-            }
+            (i == (argumentCount - 1)) ? printf("%s\n", va_arg(ap, char *)) : printf("%s, ", va_arg(ap, char *));
             break;
         default:
             break;
