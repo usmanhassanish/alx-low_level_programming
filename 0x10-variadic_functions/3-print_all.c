@@ -1,16 +1,20 @@
+#include "variadic_functions.h"
 #include <stdarg.h>
-
+/**
+ * print_all - prints with format specifier
+ * @format: format specifier
+ */
 void print_all(const char * const format, ...)
 {
     int argumentCount = 0, i = 0;
     va_list ap;
-    
-    while(format[argumentCount] != '\0')
+
+    while (format[argumentCount] != '\0')
     {
         argumentCount++;
     }
     va_start(ap, format);
-    while(i < argumentCount)
+    while (i < argumentCount)
     {
         if (format[i] == 'c')
             (i == (argumentCount - 1))?printf("%c\n", va_arg(ap, int)):printf("%c, ", va_arg(ap, int));
@@ -22,7 +26,7 @@ void print_all(const char * const format, ...)
             (i == (argumentCount - 1))?printf("%s\n", va_arg(ap, char *)):printf("%s, ", va_arg(ap, char *));
         else
         {
-            
+
         }
         i++;
     }
