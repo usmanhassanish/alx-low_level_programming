@@ -16,18 +16,22 @@ void print_all(const char * const format, ...)
     va_start(ap, format);
     while (i < argumentCount)
     {
-        if (format[i] == 'c')
-            (i == (argumentCount - 1))?printf("%c\n", va_arg(ap, int)):printf("%c, ", va_arg(ap, int));
-        else if (format[i] == 'i')
-            (i == (argumentCount - 1))?printf("%i\n", va_arg(ap, int)):printf("%i, ", va_arg(ap, int));
-        else if (format[i] == 'f')
-            (i == (argumentCount - 1))?printf("%f\n", va_arg(ap, float)):printf("%f, ", va_arg(ap, float));
-        else if (format[i] == 's')
-            (i == (argumentCount - 1))?printf("%s\n", va_arg(ap, char *)):printf("%s, ", va_arg(ap, char *));
-        else
-        {
-
-        }
+        switch (format[i]) {
+        case 'c':
+            (i == (argumentCount - 1)) ? printf("%c\n", va_arg(ap, int)) : printf("%c, ", va_arg(ap, int));
+            break;
+        case 'i':
+            (i == (argumentCount - 1)) ? printf("%i\n", va_arg(ap, int)) : printf("%i, ", va_arg(ap, int));
+            break;
+        case 'f':
+            (i == (argumentCount - 1)) ? printf("%f\n", va_arg(ap, double)) : printf("%f, ", va_arg(ap, double));
+            break;
+        case 's':
+            (i == (argumentCount - 1)) ? printf("%s\n", va_arg(ap, char *)) : printf("%s, ", va_arg(ap, char *));
+            break;
+        default:
+            break;
+    }
         i++;
     }
     va_end(ap);
